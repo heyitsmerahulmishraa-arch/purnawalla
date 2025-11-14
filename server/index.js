@@ -1,8 +1,13 @@
 const express = require("express");
-const cors = require("cors")
+const cors = require("cors");
+const router = require("./router/auth_router");
 const app = express();
+
+app.use(express.json())
+
 app.use(cors())
 
+app.use('/api/auth',router)
 // let info = [{
 //     name: "rajan",
 //     age: 17,
