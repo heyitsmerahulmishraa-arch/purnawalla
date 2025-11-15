@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-[var(--primary-color)] text-white">
-        <div className="container flex justify-between py-10 px-4">
-      <div className="brandDetails flex flex-col gap-6">
+    <footer className="bg-(--primary-color) text-white">
+        <div className="container flex flex-col md:flex-row justify-between gap-8 py-10 px-4 sm:px-6 md:px-8">
+      <div className="brandDetails flex flex-col gap-6 text-[8px] sm:text-[12px] md:text-[14px] lg:text-[16px]">
         <div className="brandAddressContainer flex gap-3">
           <div className="icon">
             <FaLocationDot />
@@ -23,30 +23,30 @@ const Footer = () => {
           <p className="max-w-[300px] ">1234567890 (Mon to Sat 10am to 6pm) foodmasalasupport@gmail.com</p>
         </div>
       </div>
-        <div className="footerLinksContainer flex gap-[80px]">
+        <div className="footerLinksContainer flex flex-wrap sm:justify-between gap-8">
             <div className="links">
-                <p className="mb-3">Links</p>
+                <p className="mb-1 sm:mb-2 md:mb-3 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px]">Links</p>
                 <ul>
-                    <li><Link to={"/about"}>About Us</Link></li>
-                    <li><Link to={"/privacy-policy"}>Privacy Policy</Link></li>
-                    <li><Link to={"/returns"}>Returns & Refund</Link></li>
-                    <li><Link to={"/terms-condition"}>Terms & Condition</Link></li>
-                    <li><Link to={"/shipping-policy"}>Shipping Policy</Link></li>
+                    <li className="text-[8px] sm:text-[12px] md:text-[14px] lg:text-[16px]"><Link to={"/about"}>About Us</Link></li>
+                    <li className="text-[8px] sm:text-[12px] md:text-[14px] lg:text-[16px]"><Link to={"/privacy-policy"}>Privacy Policy</Link></li>
+                    <li className="text-[8px] sm:text-[12px] md:text-[14px] lg:text-[16px]"><Link to={"/returns"}>Returns & Refund</Link></li>
+                    <li className="text-[8px] sm:text-[12px] md:text-[14px] lg:text-[16px]"><Link to={"/terms-condition"}>Terms & Condition</Link></li>
+                    <li className="text-[8px] sm:text-[12px] md:text-[14px] lg:text-[16px]"><Link to={"/shipping-policy"}>Shipping Policy</Link></li>
                 </ul>
             </div>
             <div className="links">
-                <p className="mb-3">Help</p>
+                <p className="mb-1 sm:mb-2 md:mb-3 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px]">Help</p>
                 <ul>
-                    <li><Link to={"/track-order"}>Track your order</Link></li>
-                    <li><Link to={"/sign-up"}>Sign Up</Link></li>
-                    <li><Link to={"/log-in"}>Log In</Link></li>
-                    <li><Link to={"/account"}>My Account</Link></li>
+                    <li className="text-[8px] sm:text-[12px] md:text-[14px] lg:text-[16px]"><Link to={"/track-order"}>Track your order</Link></li>
+                    <li className="text-[8px] sm:text-[12px] md:text-[14px] lg:text-[16px]"><Link to={"/sign-up"}>Sign Up</Link></li>
+                    <li className="text-[8px] sm:text-[12px] md:text-[14px] lg:text-[16px]"><Link to={"/log-in"}>Log In</Link></li>
+                    <li className="text-[8px] sm:text-[12px] md:text-[14px] lg:text-[16px]"><Link to={"/account"}>My Account</Link></li>
                 </ul>
             </div>
             <div className="links">
-                <p className="mb-3">Available exclusively at</p>
+                <p className="mb-1 sm:mb-2 md:mb-3 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px]">Available exclusively at</p>
                 <ul>
-                    <li><Link to={"/contact"}>My Store</Link></li>
+                    <li className="text-[8px] sm:text-[12px] md:text-[14px] lg:text-[16px]"><Link to={"/contact"}>My Store</Link></li>
                 </ul>
             </div>
         </div>

@@ -8,6 +8,7 @@
     --top-banner-bg: #3d2223;
     --text-main-color: #fff;
     --primery-font-family: "Poppins", sans-serif;
+    --border-color: rgb(158, 148, 148);
 }
 
 body{
@@ -19,7 +20,6 @@ body{
     max-width: 1440px;
     width: 100%;
     margin-inline: auto;
-    padding-inline: 80px;
     /* border: 1px solid black; */
 }
 
@@ -31,6 +31,6 @@ body{
     /* border: 1px solid black; */
 }
 
-footer a{
+/* footer a{
     font-size: 0.8rem;
-}
+} */

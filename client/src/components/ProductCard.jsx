@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const ProductCard = ({tittle,price,image}) => {
+const ProductCard = (props) => {
+  const {title,price,image} = props;
   return (
-    <div className="productContainer max-w-[280px] shadow-xl w-full pb-[10px]">
+    <div className="productContainer shadow-xl max-w-80 w-full pb-2.5 flex flex-col justify-between m-auto ">
       <div className="product-img-container w-full  min-h-[280px]">
         <img src={image} className="" alt="" />
       </div>
@@ -10,7 +11,7 @@ const ProductCard = ({tittle,price,image}) => {
         <div className="main-content-container py-[15px] flex flex-col gap-3">
           <div className="pro-title-detils flex justify-between items-center text-[20px] px-2.5">
             <p>
-              <b>{tittle}</b>
+              <b>{title}</b>
             </p>
             <p>
               <b>4.1/5 ⭐</b>
@@ -21,7 +22,7 @@ const ProductCard = ({tittle,price,image}) => {
             <span className="line-through">₹{Math.ceil(price * 2.2)}</span>
           </p>
         </div>
-        <div className="pro-btn-container flex justify-between gap-2 px-2.5 items-center text-[15px] whitespace-nowrap">
+        <div className="pro-btn-container flex justify-between gap-2 px-2.5 items-center text-[8px] sm:text-[12px] lg:text-[14px] whitespace-nowrap">
           <Link
             to={"/buynow"}
             className="py-2 px-[22px]  bg-(--primary-color) text-white font-bold"
