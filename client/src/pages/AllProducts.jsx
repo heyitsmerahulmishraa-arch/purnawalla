@@ -1,6 +1,6 @@
 import React from 'react'
 import { allProductsList } from '../assets/assets'
-import ProductCard from './ProductCard';
+import ProductCard from '../components/ProductCard';
 const AllProducts = () => {
   return (
     <div>

@@ -1,11 +1,11 @@
 import {Routes,Route} from "react-router-dom"
-import Home from "./components/Home"
+import Home from "./pages/Home"
 import Header from "./components/Header"
 import Topbar from "./components/Topbar"
 import Footer from "./components/Footer"
-import AllProducts from "./components/AllProducts"
-import Contact from "./components/Contact"
-import Profile from "./components/Profile"
+import AllProducts from "./pages/AllProducts"
+import Contact from "./pages/Contact"
+import Profile from "./pages/Profile"
 function App() {
   return (
     <>

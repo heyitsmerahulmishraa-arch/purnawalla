@@ -1,7 +1,7 @@
 import React from "react";
-import MainBanner from "./MainBanner";
-import ProductCard from "./ProductCard";
-import Top4Product from "./Top4Product";
+import MainBanner from "../components/MainBanner";
+import ProductCard from "../components/ProductCard";
+import Top4Product from "../components/Top4Product";
 import { mainProductsList } from "../assets/assets";
 
 const Home = () => {
