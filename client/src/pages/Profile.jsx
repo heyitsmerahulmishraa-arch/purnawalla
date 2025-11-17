@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import ProductCard from "../components/ProductCard";
 import ProfileSidebar from "../components/ProfileSidebar";
+import ProfileContent from "../components/ProfileContent";
+
+const Profile = ({activeValue}) => {
 
 
-const Profile = () => {
-
+  
   return (
-    <>
+    <div className="mainContainer flex">
       <ProfileSidebar />
-    </>
+      <ProfileContent/>
+    </div>
   );
 };
 
