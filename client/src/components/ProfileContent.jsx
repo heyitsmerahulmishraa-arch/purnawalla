@@ -56,8 +56,6 @@ const ProfileContent = () => {
   return <div>{contactList[active].fields.map(props=> renderFilds(props))}</div>;
 }
 
-let funs = function() {
-    
-}
+
 
 export default ProfileContent
