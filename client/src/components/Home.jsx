@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import MainBanner from "./MainBanner";
 import ProductCard from "./ProductCard";
 import Top4Product from "./Top4Product";
