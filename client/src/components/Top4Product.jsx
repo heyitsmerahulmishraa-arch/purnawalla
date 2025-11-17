@@ -15,6 +15,7 @@ const Top4Product = () => {
             title={el.title} 
             price={el.price}
             image={el.thumbnail}
+            productId={el.productId}
           />
         ))}
       </div>

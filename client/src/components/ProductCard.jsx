@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const ProductCard = (props) => {
-  const {title,price,image} = props;
+  const {title,price,image, productId} = props;
+  const navigate = useNavigate();
   return (
-    <div className="productContainer shadow-xl max-w-80 w-full pb-2.5 flex flex-col justify-between m-auto ">
+    <div onClick={() => navigate(`/product/${productId}`)} className="productContainer shadow-xl max-w-80 w-full pb-2.5 flex flex-col justify-between m-auto ">
       <div className="product-img-container w-full  min-h-[280px]">
         <img src={image} className="" alt="" />
       </div>

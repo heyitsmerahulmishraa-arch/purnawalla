@@ -18,6 +18,7 @@ const Home = () => {
             title={product.title}
             price={product.price}
             image={product.thumbnail}
+            productId={product.productId}
           />
         ))}
         </div>

@@ -4,6 +4,7 @@
 
 :root{
     --primary-color: #a58a11;
+    --primary-color-dark: #8b750e;
     --secondary-color: #d91f04;
     --top-banner-bg: #3d2223;
     --text-main-color: #fff;
@@ -29,6 +30,10 @@ body{
     margin-inline: auto;
     /* padding-inline: 80px; */
     /* border: 1px solid black; */
+}
+
+button{
+    cursor: pointer;
 }
 
 /* footer a{
