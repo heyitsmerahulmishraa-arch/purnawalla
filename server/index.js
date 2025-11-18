@@ -1,30 +1,21 @@
-const express = require("express");
-const cors = require("cors");
-const router = require("./router/auth_router");
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import router from './router/auth_router.js';
+import connectDB from './utils/db.js';
+
+dotenv.config();
+
 const app = express();
+const PORT = process.env.PORT || 5000;
 
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
+app.use("/api/auth", router);
 
-app.use(cors())
-
-app.use('/api/auth',router)
-// let info = [{
-//     name: "rajan",
-//     age: 17,
-//     role: "developer",
-//     Countery : "india"
-// }]
-
-app.get('/', (req, res) => {
-    res.json({
-        name: "rajan",
-        age: 17,
-        role: "developer",
-        Countery: "india"
-    });
-    
+// Connect to Database and Start Server
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server is running on port http://localhost:${PORT}/api/auth`);
+    })
 })
-
-app.listen(5300, () => {
-    console.log("server start now ...")
-});

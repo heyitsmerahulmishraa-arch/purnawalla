@@ -78,12 +78,12 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="hover:border p-2 border-(--border-color)">
-                  <Link to={"/contact"} className="hover:text-neutral-500">
+                  <Link to={"/profile"} className="hover:text-neutral-500">
                     Profile
                   </Link>
                 </li>
                 <li className="hover:border p-2 border-(--border-color)">
-                  <Link to={"/contact"} className="hover:text-neutral-500">
+                  <Link to={"/register"} className="hover:text-neutral-500">
                     Sign Up
                   </Link>
                 </li>

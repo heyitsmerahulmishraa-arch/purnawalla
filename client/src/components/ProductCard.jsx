@@ -4,9 +4,12 @@ const ProductCard = (props) => {
   const {title,price,image, productId} = props;
   const navigate = useNavigate();
   return (
-    <div onClick={() => navigate(`/product/${productId}`)} className="productContainer shadow-xl max-w-80 w-full pb-2.5 flex flex-col justify-between m-auto ">
-      <div className="product-img-container w-full  min-h-[280px]">
-        <img src={image} className="" alt="" />
+    <div
+      onClick={() => navigate(`/product/${productId}`)}
+      className="productContainer shadow-xl max-w-80 w-full pb-2.5 flex flex-col justify-between m-auto "
+    >
+      <div className="product-img-container w-full h-[100px] min-h-[280px] p-[10px]">
+        <img src={image} className="w-full h-full object-cover" alt="" />
       </div>
       <div className="product-content-container">
         <div className="main-content-container py-[15px] flex flex-col gap-3">
@@ -18,15 +21,17 @@ const ProductCard = (props) => {
               <b>4.1/5 ⭐</b>
             </p>
           </div>
-          <p className="px-2.5">
+          <p className="px-2.5  font-bold">
             ₹{price} -{" "}
-            <span className="line-through">₹{Math.ceil(price * 2.2)}</span>
+            <span className="line-through text-gray-500">
+              ₹{Math.ceil(price * 2.2)}
+            </span>
           </p>
         </div>
-        <div className="pro-btn-container flex justify-between gap-2 px-2.5 items-center text-[8px] sm:text-[12px] lg:text-[14px] whitespace-nowrap">
+        <div className="pro-btn-container  text-center flex justify-between gap-2 px-2.5 items-center text-[8px] sm:text-[12px] lg:text-[14px] whitespace-nowrap">
           <Link
             to={"/buynow"}
-            className="py-2 px-[22px]  bg-(--primary-color) text-white font-bold"
+            className="py-3 hover:bg-(--primary-color-dark) px-[30px] text-[15px] md:text-[12px] w-[50%] bg-(--primary-color) text-white font-bold"
           >
             Buy Now
           </Link>
@@ -34,7 +39,7 @@ const ProductCard = (props) => {
             onClick={() => {
               alert("your product added");
             }}
-            className="py-2 px-[22px]  font-bold bg-(--secondary-color) text-white"
+            className="py-3 hover:bg-(--primary-color-dark) px-[30px] text-[15px] md:text-[12px] w-[50%] font-bold bg-(--secondary-color) text-white"
           >
             Add To cart
           </Link>
