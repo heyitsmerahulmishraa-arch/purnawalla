@@ -94,7 +94,7 @@ const ProfileContent = ({ active }) => {
     <div className="profileContainer flex flex-col gap-2 flex-1 p-5 pb-80">
     <div className="flex justify-between items-center mb-4">
       <h2 className="capitalize font-bold">{active}</h2>
-      <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded cursor-pointer ">Save</button>
+      <button className="bg-(--primary-color) hover:bg-(--primary-color-dark) text-white py-2 px-4 rounded cursor-pointer ">Save</button>
     </div>
       <div className="contentContainer">
         {contactList[active].fields.map((props) => renderFilds(props))}
