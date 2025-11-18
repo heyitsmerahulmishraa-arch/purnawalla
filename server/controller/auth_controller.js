@@ -9,7 +9,7 @@ const signup = async (req,res) => {
         const { name, email, password, address, phone, pinCode } = req.body;
 
         // Basic validation
-        if (!name || !email || !password || !address || !phone || !pinCode) {
+        if (!name || !email || !password) {
             return res.status(400).json({ message: "All fields are required" });
         }
         // Check if user already exists
@@ -18,7 +18,7 @@ const signup = async (req,res) => {
             return res.status(409).json({ message: "User already exists" });
         }
         // Create new user
-        const newUser = new User({ name, email, password, address, phone, pinCode });
+        const newUser = new User({ name, email, password });
         await newUser.save();
         res.status(201).json({ message: "User created successfully" });
     } catch (error) {
