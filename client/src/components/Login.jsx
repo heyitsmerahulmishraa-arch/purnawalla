@@ -1,23 +1,25 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
-
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = e.target.elements;
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/login",{email: email.value, password: password.value});
+      const response = await axios.post(
+        "http://localhost:3000/api/auth/login",
+        { email: email.value, password: password.value }
+      );
       console.log("Login Successful:", response.data);
       alert("Login Successful");
       navigate("/");
     } catch (error) {
       console.error("Login Error:", error);
     }
-  }
+  };
 
   return (
     <div className="profileContainer flex flex-col gap-2 flex-1 p-5 pb-80">
@@ -62,6 +64,7 @@ const Login = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Login
+
+export default Login;

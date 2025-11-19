@@ -21,7 +21,7 @@ const AllProducts = () => {
           </ul>
         </div>
       </div>
-      <div className="mainProductContianer">
+      <div className="mainProductContianer  flex-1">
         <h1 className='text-center text-3xl font-medium my-8'>All Products</h1>
       <div className="allProductsListContainer grid grid-auto-flow grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-cols-min justify-center items-center gap-16 py-10">
         {allProductsList.map((product) => (

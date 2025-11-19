@@ -107,12 +107,18 @@ const AdminContent = ({ active }) => {
     return (
       <div>
         <table className="w-full border-collapse ">
-          <thead className="bg-gray-500 ">
+          <thead className="bg-(--top-banner-bg) text-white ">
             <tr className="">
-              <th className="border px-4 py-2 text-left border-none">Username</th>
-              <th className="border px-4 py-2 text-left border-none">Product Name</th>
+              <th className="border px-4 py-2 text-left border-none">
+                Username
+              </th>
+              <th className="border px-4 py-2 text-left border-none">
+                Product Name
+              </th>
               <th className="border px-4 py-2 text-left border-none">Qty</th>
-              <th className="border px-4 py-2 text-left border-none">Address</th>
+              <th className="border px-4 py-2 text-left border-none">
+                Address
+              </th>
               <th className="border px-4 py-2 text-left border-none">Total</th>
               <th className="border px-4 py-2 text-left border-none">Status</th>
             </tr>
@@ -123,11 +129,19 @@ const AdminContent = ({ active }) => {
                 key={product.name}
                 className={index % 2 === 0 ? "bg-white" : "bg-gray-300"}
               >
-                <td className="border px-4 py-2 border-none">{product.username}</td>
-                <td className="border px-4 py-2 border-none">{product.product}</td>
+                <td className="border px-4 py-2 border-none">
+                  {product.username}
+                </td>
+                <td className="border px-4 py-2 border-none">
+                  {product.product}
+                </td>
                 <td className="border px-4 py-2 border-none">{product.qty}</td>
-                <td className="border px-4 py-2 border-none">{product.address}</td>
-                <td className="border px-4 py-2 border-none">{product.total}</td>
+                <td className="border px-4 py-2 border-none">
+                  {product.address}
+                </td>
+                <td className="border px-4 py-2 border-none">
+                  {product.total}
+                </td>
                 <td className="border px-4 py-2 border-none">
                   <select
                     name="orderStatus"
