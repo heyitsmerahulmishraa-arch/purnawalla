@@ -7,7 +7,7 @@ const Cart = () => {
            <p className='text-3xl font-bold'>Shopping Cart</p>
            <div className="productsTableContainer">
             <table className="productsTable w-full border-collapse border border-gray-300">
-              <thead className='bg-(--primary-color) text-white'>
+              <thead className=''>
                 <tr>
                   <th className="border px-4 py-2 text-left">Product</th>
                   <th className="border px-4 py-2 text-left">Price</th>
@@ -15,7 +15,7 @@ const Cart = () => {
                   <th className="border px-4 py-2 text-left">Total</th>
                 </tr>
               </thead>
-              <tbody className='bg-(--border-color) text-white font-medium '>
+              <tbody className='font-medium '>
                 <tr>
                   <td className="border px-4 py-2">Product 1</td>
                   <td className="border px-4 py-2">$10.00</td>
@@ -31,13 +31,15 @@ const Cart = () => {
               </tbody>
             </table>
            </div>
-              <div className="cartSummary mt-5 p-4 border rounded max-w-md relative">
+              <div className="cartSummeryContainer flex justify-end">
+                <div className="cartSummary mt-5 p-4 border border-gray-500 rounded max-w-md shrink-0 w-full">
               <h2 className="text-xl font-medium mb-4">Cart Summary</h2>
               <p className="mb-2">Subtotal: $35.00</p>
               <p className="mb-4">Taxes: $3.50</p>
               <p className="mb-4 font-bold">Total: $38.50</p>
               <button className="w-full py-3 bg-(--primary-color) hover:bg-(--primary-color-dark) cursor-pointer text-white rounded">Proceed to Checkout</button>
             </div>
+              </div>
         </div>
     </section>
   )

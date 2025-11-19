@@ -8,7 +8,7 @@ import Contact from "./pages/Contact"
 import Profile from "./pages/Profile"
 import Register from "./components/Register"
 import Login from "./components/Login"
-import Cart from "./components/Cart"
+import Cart from "./pages/Cart"
 import Product from "./components/Product"
 import AdminPanel from "./pages/AdminPanel"
 
