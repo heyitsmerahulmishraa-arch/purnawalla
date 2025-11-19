@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const ProfileSidebar = ({ setActive }) => {
   const [activeOption, setActiveOption] = useState("accountDetails");
+
   const options = [
     { id: "1", name: "accountDetails" },
     { id: "2", name: "profile" },

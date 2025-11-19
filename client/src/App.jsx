@@ -10,6 +10,7 @@ import Register from "./components/Register"
 import Login from "./components/Login"
 import Cart from "./components/Cart"
 import Product from "./components/Product"
+import AdminPanel from "./pages/AdminPanel"
 
 
 const PrivateRoute = ({children}) => {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/cart" element={<Cart/>} />
         <Route path="/product/:productId" element={<Product/>} />
+        <Route path="/admin" element={<AdminPanel/>} />
         {/* <Route path="*" element={<Navigate to="/" />} /> */}
       </Routes>
       <Footer />

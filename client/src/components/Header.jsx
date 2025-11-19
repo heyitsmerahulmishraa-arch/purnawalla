@@ -5,6 +5,7 @@ import { IoMenu } from "react-icons/io5";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(true);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -37,6 +38,13 @@ const Header = () => {
               Contact Us
             </Link>
           </li>
+          {
+            isAdmin && (<li>
+              <Link to={"/admin"} className="hover:text-neutral-500">
+                Admin Panel</Link>
+            </li>)
+          }
+
         </ul>
         <div className="headersButton hidden md:flex items-center gap-6">
           <Link to={"/profile"} className="text-[32px]">
