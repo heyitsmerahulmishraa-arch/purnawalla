@@ -29,11 +29,6 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to={"/category"} className="hover:text-neutral-500">
-              Category
-            </Link>
-          </li>
-          <li>
             <Link to={"/contact"} className="hover:text-neutral-500">
               Contact Us
             </Link>

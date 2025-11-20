@@ -55,6 +55,7 @@ const Register = () => {
               className="py-3 px-3 border border-(--border-color) rounded"
             />
           </div>
+          
           <div className="flex gap-4 mt-4">
             <button
               type="submit"
