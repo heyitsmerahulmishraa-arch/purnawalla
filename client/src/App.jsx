@@ -11,10 +11,14 @@ import Login from "./components/Login"
 import Cart from "./pages/Cart"
 import Product from "./components/Product"
 import AdminPanel from "./pages/AdminPanel"
+import { ToastContainer, toast } from "react-toastify"
 
 
 const PrivateRoute = ({children}) => {
-  const auth = true; // Replace with real authentication logic
+  const auth = localStorage.getItem("token");
+  if(!auth) {
+    toast.error("Please login to access this page.");
+  }
   return auth ? children : <Navigate to="/login" />;
 }
 
@@ -24,6 +28,7 @@ function App() {
     <>
       <Topbar />
       <Header />
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<AllProducts />} />
@@ -31,9 +36,9 @@ function App() {
         <Route path="/profile" element={<PrivateRoute><Profile/></PrivateRoute>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<Login/>} />
-        <Route path="/cart" element={<Cart/>} />
+        <Route path="/cart" element={<PrivateRoute><Cart/></PrivateRoute>} />
         <Route path="/product/:productId" element={<Product/>} />
-        <Route path="/admin" element={<AdminPanel/>} />
+        <Route path="/admin" element={<PrivateRoute><AdminPanel/></PrivateRoute>} />
         {/* <Route path="*" element={<Navigate to="/" />} /> */}
       </Routes>
       <Footer />

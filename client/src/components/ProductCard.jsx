@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaRegStar } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
+import axios from "axios";
+import {ToastContainer, toast} from "react-toastify"
 
 const ProductCard = (props) => {
-  const {title,price,image, productId} = props;
+  const {title, discountPrice, price, image, productId, isInCart} = props;
   const navigate = useNavigate();
+  const [inStock, setInStock] = useState(true);
+  const token = localStorage.getItem("token");
+
+  const handleAddToCart = () => {
+    if(!token) {
+      toast.error("Please login to add items to cart.");
+      navigate("/login");
+      return;
+    }
+    // Logic to add the product to cart
+    toast.success(`Product ${title} added to cart!`);
+  }
+
   return (
     <div
       onClick={() => navigate(`/product/${productId}`)}
@@ -25,23 +40,40 @@ const ProductCard = (props) => {
               <b>4.1/5</b>
             </p>
           </div>
-          <p className="px-2.5  font-bold">
-            ₹{price} -{" "}
+          <div className="pro-price-stock flex justify-between gap-1">
+            <p className="px-2.5  font-bold">
+            ₹{discountPrice} -{" "}
             <span className="line-through text-gray-500">
-              ₹{Math.ceil(price * 2.2)}
+              ₹{price}
             </span>
           </p>
+
+          {
+            inStock ? (
+              <p onClick={() => setInStock(!inStock)} className="text-green-600 cursor-pointer font-semibold text-sm px-2.5">In Stock</p>
+            ) : (
+              <p onClick={() => setInStock(!inStock)} className="text-red-600 cursor-pointer font-semibold text-sm px-2.5">Out of Stock</p>
+            )
+          }
+          </div>
         </div>
         <div className="pro-btn-container  text-center flex justify-between gap-2 px-2.5 items-center text-[8px] sm:text-[12px] lg:text-[14px] whitespace-nowrap">
-          <Link
-            onClick={() => {
-              alert("your product added");
-            }}
+          {
+            inStock ? (
+              <Link
+            onClick={() => handleAddToCart()}
             className="flex items-center justify-center py-3 hover:bg-(--primary-color-dark) text-[12px] md:text-[12px] w-full font-bold bg-(--secondary-color) text-white"
           >
             <FaCartShopping className="inline-block mr-2" />
             Add To cart
           </Link>
+            ) : (
+              <button disabled className="flex items-center justify-center py-3 text-[12px] md:text-[12px] w-full font-bold bg-gray-400 text-white cursor-not-allowed">
+              <FaCartShopping className="inline-block mr-2" />
+              Add To cart
+            </button>
+            )
+          }
         </div>
       </div>
     </div>

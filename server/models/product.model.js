@@ -89,6 +89,14 @@ const productSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    isShowcased: {
+      type: Boolean,
+      default: false,
+    },
+    isInCart: {
+      type: Boolean,
+      default: false,
+    }
   },
   { timestamps: true }
 );

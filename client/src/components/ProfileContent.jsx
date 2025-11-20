@@ -8,32 +8,15 @@ const ProfileContent = ({ active }) => {
   const contactList = {
     accountDetails: {
       fields: [
-        { label: "name", value: "Rajan Awasthi" },
-        { label: "email", value: "Rajan@gmail.co" },
-        { label: "password", value: "Rajan Awasthi" },
+        {label: "name", value: "John"},
+        {label: "email", value: "john@example.com"},
+        {label: "phone", value: "+1234567890"},
+        {label: "address", value: "123 Main St, City, Country"},
+        {label: "pincode", value: "123456"},
       ],
     },
 
-    profile: {
-      fields: [
-        { label: "userName", value: "Rajan Awasthi" },
-        { label: "email", value: "Rajan@gmail.co" },
-        { label: "password", value: "Rajan Awasthi" },
-        { label: "address", value: "Fatehpur" },
-        { label: "pincode", value: "212601" },
-      ],
-    },
-
-    userDetails: {
-      fields: [
-        { label: "Name", value: "Mark" },
-        { label: "Email", value: "mark@gmail.com" },
-        { label: "Phone", value: "1234567890" },
-        { label: "Address", value: "New York, USA" },
-      ],
-    },
-
-    productDetails: {
+    orderHistory: {
       fields: [
         {name: "Sony WH-1000XM4", qty: 1, price: 299.99, value: "Sony WH-1000XM4", total: 299.99},
         {name: "Apple AirPods Pro", qty: 2, price: 249.99, value: "Apple AirPods Pro", total: 499.98},
@@ -47,7 +30,7 @@ const ProfileContent = ({ active }) => {
 
   function renderFilds(field) {
 
-    if (active === 'productDetails') {
+    if (active === 'orderHistory'){ {
       return (
               <tr key={field.name}>
                 <td className="border px-4 py-2">{field.name}</td>
@@ -56,7 +39,7 @@ const ProfileContent = ({ active }) => {
                 <td className="border px-4 py-2">{field.total}</td>
               </tr>
       )
-    }
+    }}
 
     return (
       <div className="container flex flex-col gap-2 py-2" key={field.label}>
@@ -66,7 +49,7 @@ const ProfileContent = ({ active }) => {
     );
   }
 
-  if (active === 'productDetails'){
+  if (active === 'orderHistory'){
     return (
       <div className="profileContainer flex flex-col gap-2 flex-1 p-5 pb-80">
         <table className="w-full border-collapse border border-gray-300">
@@ -86,8 +69,9 @@ const ProfileContent = ({ active }) => {
     )
   }
 
-  if(active === "register"){
-    return navigate("/register");
+  if(active === 'logOut'){
+    localStorage.removeItem("token");
+    navigate("/login");
   }
 
   return (

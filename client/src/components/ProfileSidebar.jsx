@@ -5,11 +5,8 @@ const ProfileSidebar = ({ setActive }) => {
 
   const options = [
     { id: "1", name: "accountDetails" },
-    { id: "2", name: "profile" },
-    { id: "3", name: "userDetails" },
-    { id: "4", name: "productDetails" },
-    { id: "5", name: "register" },
-    { id: "6", name: "logOut" },
+    { id: "2", name: "orderHistory" },
+    { id: "3", name: "logOut" },
   ];
 
   return (

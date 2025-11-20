@@ -14,6 +14,7 @@ const Login = () => {
         { email: email.value, password: password.value }
       );
       console.log("Login Successful:", response.data);
+      localStorage.setItem("token", response.data.token);
       alert("Login Successful");
       navigate("/");
     } catch (error) {
