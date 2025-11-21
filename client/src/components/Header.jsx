@@ -6,6 +6,7 @@ import { IoMenu } from "react-icons/io5";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(true);
+  const [userDetails, setUserDetails] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -81,7 +82,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="hover:border p-2 border-(--border-color)">
-                  <Link to={"/profile"} className="hover:text-neutral-500">
+                  <Link  to={"/profile"} className="hover:text-neutral-500">
                     Profile
                   </Link>
                 </li>

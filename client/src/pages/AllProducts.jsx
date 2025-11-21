@@ -3,11 +3,13 @@ import { allProductsList } from '../assets/assets'
 import ProductCard from '../components/ProductCard';
 import axios from 'axios';
 import { useEffect } from 'react';
+import { FaFilter } from "react-icons/fa";
 
 
 const AllProducts = () => {
 
   const [products, setProducts] = useState([]);
+  const [showFilterSidebar, setShowFilterSidebar] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -24,8 +26,10 @@ const AllProducts = () => {
   },[]);
 
   return (
-    <div className='allProductsPageContainer flex gap-5 p-5 pb-80'>
-      <div className="sidebarFilterContianer">
+    <div className='allProductsPageContainer flex gap-5 p-5 pb-80 flex-col md:flex-row'>
+      <div className="sidebarFilter">
+        <div onClick={() => setShowFilterSidebar(!showFilterSidebar)} className='md:hidden text-2xl cursor-pointer'><FaFilter /></div>
+        <div className={`sidebarFilterContianer ${showFilterSidebar ? 'block' : 'hidden'} md:block p-5 shadow-lg sticky top-20 h-fit`}>
         <div className="searchProductContianer">
           <input type="text" placeholder='Search Product...' className='w-full py-3 px-3 border border-(--border-color) rounded'/>
         </div>
@@ -42,9 +46,10 @@ const AllProducts = () => {
           </ul>
         </div>
       </div>
+      </div>
       <div className="mainProductContianer  flex-1">
         <h1 className='text-center text-3xl font-medium my-8'>All Products</h1>
-      <div className="allProductsListContainer grid grid-auto-flow grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-cols-min justify-center items-center gap-16 py-10">
+      <div className="allProductsListContainer grid grid-auto-flow grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 auto-cols-min justify-center items-center gap-16 py-10">
         {
           products.length >= 0 ? (
             products.map((product) => (

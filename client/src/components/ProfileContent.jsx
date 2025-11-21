@@ -51,7 +51,7 @@ const ProfileContent = ({ active }) => {
 
   if (active === 'orderHistory'){
     return (
-      <div className="profileContainer flex flex-col gap-2 flex-1 p-5 pb-80">
+      <div className="profileContainer w-full overflow-x-scroll md:overflow-auto flex flex-col gap-2 flex-1 p-5">
         <table className="w-full border-collapse border border-gray-300">
           <thead>
             <tr className="">

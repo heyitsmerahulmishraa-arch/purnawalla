@@ -11,12 +11,12 @@ const ProfileSidebar = ({ setActive }) => {
 
   return (
     <div>
-      <aside className="sidebar w-64 border-r h-full border-(--border-color)">
-        <ul className="menu-list p-4">
+      <aside className="sidebar sm:border-b md:border-r md:border-b-0 w-full h-full border-(--border-color)">
+        <ul className="menu-list p-4 flex md:flex-col text-[14px] md:text-[16px] gap-2">
           {options.map((opt) => (
             <li
               key={opt.id}
-              className={`p-2 mb-2 cursor-pointer hover:bg-gray-200 capitalize ${
+              className={`w-fit p-2 mb-2 cursor-pointer hover:bg-gray-200 capitalize ${
                 activeOption === opt.name ? "bg-gray-300 font-bold" : ""
               }`}
               onClick={() => {

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 
 const Cart = () => {
@@ -19,6 +20,14 @@ const Cart = () => {
        [box]: prev[box] - 1,
      }));
    };
+
+  //  handleCartProducts = () => {
+  //   axios.get("http://localhost:5000/products/cartProducts",).then((res) => {
+  //     console.log(res.data);
+  //   }).catch((err) => {
+  //     console.error("Error fetching cart products:", err);
+  //   });
+  //  }
 
 
   return (
